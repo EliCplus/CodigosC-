@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void transformer(char a[],int b, char c, int v){
+void transformer(char a[],int b, char c, int &v){ //me había olvidado de el & en la función.
 	
 	switch(a[b]){
 	case '0':v=v+0;
@@ -26,7 +26,7 @@ void transformer(char a[],int b, char c, int v){
 	break;
 	}
 	if(c=='d'){
-		v==v*10;
+		v=v*10; //habías comparado en vez de asignado
 	}
 }
 
@@ -53,16 +53,16 @@ int main(int argc, char *argv[]) {
 	transformer(fecha,4,nc,anio);
 	nc='u';
 	transformer(fecha,5,nc,anio);
-	month=-1;
+	month=-1; //corregime este error que es lo que revienta todo
 	
 	if(anio>=25&&anio<=99){
-		anio+=1000;
+		anio+=1000; //aca +1000 esta mal. Cambialo
 	}
 	else{
 		anio+2000;
 	}
 	
-	cout<<fecha[0]+ fecha[1]<<" de "<<mes[month]<<" de "<<anio;
+	cout<<fecha[0]+ fecha[1]<<" de "<<mes[month]<<" de "<<anio; //la forma en que muestra el día esta mal. Fijate como arreglarlo
 	return 0;
 }
 
