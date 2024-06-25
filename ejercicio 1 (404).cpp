@@ -53,16 +53,16 @@ int main(int argc, char *argv[]) {
 	transformer(fecha,4,nc,anio);
 	nc='u';
 	transformer(fecha,5,nc,anio);
-	month=-1; //corregime este error que es lo que revienta todo
+ //corregime este error que es lo que revienta todo
 	
 	if(anio>=25&&anio<=99){
-		anio+=1000; //aca +1000 esta mal. Cambialo
+		anio+=1900; //aca +1000 esta mal. Cambialo
 	}
 	else{
 		anio+2000;
 	}
 	
-	cout<<fecha[0]+ fecha[1]<<" de "<<mes[month]<<" de "<<anio; //la forma en que muestra el día esta mal. Fijate como arreglarlo
+	cout<<fecha[0]<<fecha[1]<<" de "<<mes[month]<<" de "<<anio; //la forma en que muestra el día esta mal. Fijate como arreglarlo
 	return 0;
 }
 
